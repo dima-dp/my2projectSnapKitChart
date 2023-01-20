@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F062AEF29CAE5C502A310E6 /* Pods_my2projectSnapKitChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1615352693464E3CCFC2BEE8 /* Pods_my2projectSnapKitChart.framework */; };
 		F45FCDBD29782E4700EC7A17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDBC29782E4700EC7A17 /* AppDelegate.swift */; };
 		F45FCDBF29782E4700EC7A17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDBE29782E4700EC7A17 /* SceneDelegate.swift */; };
-		F45FCDC129782E4700EC7A17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDC029782E4700EC7A17 /* ViewController.swift */; };
 		F45FCDC429782E4700EC7A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FCDC229782E4700EC7A17 /* Main.storyboard */; };
 		F45FCDC629782E4900EC7A17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45FCDC529782E4900EC7A17 /* Assets.xcassets */; };
 		F45FCDC929782E4900EC7A17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FCDC729782E4900EC7A17 /* LaunchScreen.storyboard */; };
+		F45FCDD32978990700EC7A17 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDD22978990700EC7A17 /* mainViewController.swift */; };
+		F45FCDD629798DB500EC7A17 /* RIPStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDD529798DB500EC7A17 /* RIPStatistics.swift */; };
+		F45FCDD8297ACB7700EC7A17 /* chartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDD7297ACB7700EC7A17 /* chartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1615352693464E3CCFC2BEE8 /* Pods_my2projectSnapKitChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_my2projectSnapKitChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68A32452C5CFE34CD2DEA47A /* Pods-my2projectSnapKitChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my2projectSnapKitChart.debug.xcconfig"; path = "Target Support Files/Pods-my2projectSnapKitChart/Pods-my2projectSnapKitChart.debug.xcconfig"; sourceTree = "<group>"; };
+		9662D9C113D9BE9FE34CE98F /* Pods-my2projectSnapKitChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my2projectSnapKitChart.release.xcconfig"; path = "Target Support Files/Pods-my2projectSnapKitChart/Pods-my2projectSnapKitChart.release.xcconfig"; sourceTree = "<group>"; };
 		F45FCDB929782E4700EC7A17 /* my2projectSnapKitChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my2projectSnapKitChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45FCDBC29782E4700EC7A17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45FCDBE29782E4700EC7A17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F45FCDC029782E4700EC7A17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F45FCDC329782E4700EC7A17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F45FCDC529782E4900EC7A17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F45FCDC829782E4900EC7A17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F45FCDCA29782E4900EC7A17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45FCDD22978990700EC7A17 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		F45FCDD529798DB500EC7A17 /* RIPStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RIPStatistics.swift; sourceTree = "<group>"; };
+		F45FCDD7297ACB7700EC7A17 /* chartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F062AEF29CAE5C502A310E6 /* Pods_my2projectSnapKitChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031EFB128924F134ECC20F82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1615352693464E3CCFC2BEE8 /* Pods_my2projectSnapKitChart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54FF0D9314BD12A15BFD0D04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68A32452C5CFE34CD2DEA47A /* Pods-my2projectSnapKitChart.debug.xcconfig */,
+				9662D9C113D9BE9FE34CE98F /* Pods-my2projectSnapKitChart.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F45FCDB029782E4700EC7A17 = {
 			isa = PBXGroup;
 			children = (
 				F45FCDBB29782E4700EC7A17 /* my2projectSnapKitChart */,
 				F45FCDBA29782E4700EC7A17 /* Products */,
+				54FF0D9314BD12A15BFD0D04 /* Pods */,
+				031EFB128924F134ECC20F82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +84,41 @@
 		F45FCDBB29782E4700EC7A17 /* my2projectSnapKitChart */ = {
 			isa = PBXGroup;
 			children = (
+				F45FCDD429798D9200EC7A17 /* Models */,
+				F45FCDD029782EB000EC7A17 /* Application */,
+				F45FCDD129782F1100EC7A17 /* SupportingFiles */,
+			);
+			path = my2projectSnapKitChart;
+			sourceTree = "<group>";
+		};
+		F45FCDD029782EB000EC7A17 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				F45FCDBC29782E4700EC7A17 /* AppDelegate.swift */,
 				F45FCDBE29782E4700EC7A17 /* SceneDelegate.swift */,
-				F45FCDC029782E4700EC7A17 /* ViewController.swift */,
+				F45FCDD22978990700EC7A17 /* mainViewController.swift */,
+				F45FCDD7297ACB7700EC7A17 /* chartViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F45FCDD129782F1100EC7A17 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				F45FCDC229782E4700EC7A17 /* Main.storyboard */,
 				F45FCDC529782E4900EC7A17 /* Assets.xcassets */,
 				F45FCDC729782E4900EC7A17 /* LaunchScreen.storyboard */,
 				F45FCDCA29782E4900EC7A17 /* Info.plist */,
 			);
-			path = my2projectSnapKitChart;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F45FCDD429798D9200EC7A17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F45FCDD529798DB500EC7A17 /* RIPStatistics.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F45FCDCD29782E4900EC7A17 /* Build configuration list for PBXNativeTarget "my2projectSnapKitChart" */;
 			buildPhases = (
+				101FBDAAAB3D03B8A580C4AA /* [CP] Check Pods Manifest.lock */,
 				F45FCDB529782E4700EC7A17 /* Sources */,
 				F45FCDB629782E4700EC7A17 /* Frameworks */,
 				F45FCDB729782E4700EC7A17 /* Resources */,
+				BCE20B8C3424E20015B3DC48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +189,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		101FBDAAAB3D03B8A580C4AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-my2projectSnapKitChart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCE20B8C3424E20015B3DC48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-my2projectSnapKitChart/Pods-my2projectSnapKitChart-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-my2projectSnapKitChart/Pods-my2projectSnapKitChart-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my2projectSnapKitChart/Pods-my2projectSnapKitChart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F45FCDB529782E4700EC7A17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F45FCDC129782E4700EC7A17 /* ViewController.swift in Sources */,
+				F45FCDD8297ACB7700EC7A17 /* chartViewController.swift in Sources */,
+				F45FCDD629798DB500EC7A17 /* RIPStatistics.swift in Sources */,
 				F45FCDBD29782E4700EC7A17 /* AppDelegate.swift in Sources */,
 				F45FCDBF29782E4700EC7A17 /* SceneDelegate.swift in Sources */,
+				F45FCDD32978990700EC7A17 /* mainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +382,7 @@
 		};
 		F45FCDCE29782E4900EC7A17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68A32452C5CFE34CD2DEA47A /* Pods-my2projectSnapKitChart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -289,12 +390,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4Y89R8Q9VV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = my2projectSnapKitChart/Info.plist;
+				INFOPLIST_FILE = my2projectSnapKitChart/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,14 +404,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Ihnatenko.my2projectSnapKitChart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F45FCDCF29782E4900EC7A17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9662D9C113D9BE9FE34CE98F /* Pods-my2projectSnapKitChart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,12 +423,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4Y89R8Q9VV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = my2projectSnapKitChart/Info.plist;
+				INFOPLIST_FILE = my2projectSnapKitChart/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +437,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Ihnatenko.my2projectSnapKitChart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
