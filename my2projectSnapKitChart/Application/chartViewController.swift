@@ -12,11 +12,13 @@ import Charts
 
 class chartViewController: UIViewController {
     
-    let segmentControl = UISegmentedControl(items: ["year", "month", "week"])
+    let segmentControl = UISegmentedControl(items: ["Рік", "Місяць", "Тиждень"])
     
     lazy var lineChartView: LineChartView = {
         let chartView = LineChartView()
         chartView.backgroundColor = .systemRed
+
+        
         return chartView
     }()
     
@@ -34,14 +36,26 @@ class chartViewController: UIViewController {
     
     private func initialize() {
         
-        segmentControl.frame = CGRect(x: 0, y: 50, width: 300, height: 50)
+        //segmentControl.frame = CGRect(x: 0, y: 50, width: 100, height: 75)
         segmentControl.selectedSegmentIndex = 0
         segmentControl.addTarget(self, action: #selector(segmentControlChanged(_ :)), for: .valueChanged)
         
-        lineChartView.frame = CGRect(x: 0, y: 100, width: 300, height: 300)
+        
         
         view.addSubview(segmentControl)
         view.addSubview(lineChartView)
+        
+        segmentControl.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(50)
+            $0.bottom.equalToSuperview().inset(16)
+            $0.height.equalTo(50)
+        }
+        
+        lineChartView.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(16)
+            $0.top.equalToSuperview().inset(70)
+            $0.bottom.equalTo(segmentControl).inset(50 + 20)
+        }
         
         
     }
