@@ -37,7 +37,8 @@ class chartViewController: UIViewController {
     private func initialize() {
         
         //segmentControl.frame = CGRect(x: 0, y: 50, width: 100, height: 75)
-        segmentControl.selectedSegmentIndex = 0
+        segmentControl.selectedSegmentIndex = 2
+        segmentControl.backgroundColor = .systemGray5
         segmentControl.addTarget(self, action: #selector(segmentControlChanged(_ :)), for: .valueChanged)
         
         
