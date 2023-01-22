@@ -12,13 +12,12 @@ import Charts
 
 class chartViewController: UIViewController {
     
+
     let segmentControl = UISegmentedControl(items: ["Рік", "Місяць", "Тиждень"])
     
     lazy var lineChartView: LineChartView = {
         let chartView = LineChartView()
         chartView.backgroundColor = .systemRed
-
-        
         return chartView
     }()
     
@@ -28,17 +27,17 @@ class chartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray2
-        
         initialize()
     }
     
     
     
     private func initialize() {
+        title = "asdasd"
         
-        //segmentControl.frame = CGRect(x: 0, y: 50, width: 100, height: 75)
         segmentControl.selectedSegmentIndex = 2
-        segmentControl.backgroundColor = .systemGray5
+        segmentControl.backgroundColor = .systemBrown
+        segmentControl.selectedSegmentTintColor = .systemGray3
         segmentControl.addTarget(self, action: #selector(segmentControlChanged(_ :)), for: .valueChanged)
         
         
