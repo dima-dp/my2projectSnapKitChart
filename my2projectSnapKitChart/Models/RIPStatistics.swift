@@ -9,7 +9,16 @@ import UIKit
 
 struct statistics {
     
-    let date: Date
-
+    struct Welcome: Codable {
+        let message: String
+        let data: DataClass
+    }
     
+    // MARK: - DataClass
+    struct DataClass: Codable {
+        let date: String
+        let day: Int
+        let resource: String
+        let stats, increase: [String: Int]
+    }
 }

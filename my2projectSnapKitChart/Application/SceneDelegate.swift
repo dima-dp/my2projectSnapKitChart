@@ -18,6 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         let navigationController = UINavigationController()
+        navigationController.navigationBar.tintColor = .black
+        
         navigationController.viewControllers = [view]
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
