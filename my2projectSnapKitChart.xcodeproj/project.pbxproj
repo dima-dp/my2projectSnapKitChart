@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7F062AEF29CAE5C502A310E6 /* Pods_my2projectSnapKitChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1615352693464E3CCFC2BEE8 /* Pods_my2projectSnapKitChart.framework */; };
+		F4244FB8297F1CCF00DA8630 /* dataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4244FB7297F1CCF00DA8630 /* dataHelper.swift */; };
+		F4244FBA297F23D800DA8630 /* StaticInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4244FB9297F23D800DA8630 /* StaticInformation.swift */; };
 		F45FCDBD29782E4700EC7A17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDBC29782E4700EC7A17 /* AppDelegate.swift */; };
 		F45FCDBF29782E4700EC7A17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDBE29782E4700EC7A17 /* SceneDelegate.swift */; };
 		F45FCDC429782E4700EC7A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FCDC229782E4700EC7A17 /* Main.storyboard */; };
 		F45FCDC629782E4900EC7A17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45FCDC529782E4900EC7A17 /* Assets.xcassets */; };
 		F45FCDC929782E4900EC7A17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FCDC729782E4900EC7A17 /* LaunchScreen.storyboard */; };
 		F45FCDD32978990700EC7A17 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDD22978990700EC7A17 /* mainViewController.swift */; };
-		F45FCDD629798DB500EC7A17 /* RIPStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDD529798DB500EC7A17 /* RIPStatistics.swift */; };
 		F45FCDD8297ACB7700EC7A17 /* chartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FCDD7297ACB7700EC7A17 /* chartViewController.swift */; };
 		F4693D02297C6B5900974E0A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4693D00297C6B5900974E0A /* CustomTableViewCell.swift */; };
 		F4693D03297C6B5900974E0A /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4693D01297C6B5900974E0A /* CustomTableViewCell.xib */; };
@@ -25,6 +26,8 @@
 		1615352693464E3CCFC2BEE8 /* Pods_my2projectSnapKitChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_my2projectSnapKitChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A32452C5CFE34CD2DEA47A /* Pods-my2projectSnapKitChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my2projectSnapKitChart.debug.xcconfig"; path = "Target Support Files/Pods-my2projectSnapKitChart/Pods-my2projectSnapKitChart.debug.xcconfig"; sourceTree = "<group>"; };
 		9662D9C113D9BE9FE34CE98F /* Pods-my2projectSnapKitChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my2projectSnapKitChart.release.xcconfig"; path = "Target Support Files/Pods-my2projectSnapKitChart/Pods-my2projectSnapKitChart.release.xcconfig"; sourceTree = "<group>"; };
+		F4244FB7297F1CCF00DA8630 /* dataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataHelper.swift; sourceTree = "<group>"; };
+		F4244FB9297F23D800DA8630 /* StaticInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticInformation.swift; sourceTree = "<group>"; };
 		F45FCDB929782E4700EC7A17 /* my2projectSnapKitChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my2projectSnapKitChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45FCDBC29782E4700EC7A17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45FCDBE29782E4700EC7A17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +36,6 @@
 		F45FCDC829782E4900EC7A17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F45FCDCA29782E4900EC7A17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45FCDD22978990700EC7A17 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
-		F45FCDD529798DB500EC7A17 /* RIPStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RIPStatistics.swift; sourceTree = "<group>"; };
 		F45FCDD7297ACB7700EC7A17 /* chartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartViewController.swift; sourceTree = "<group>"; };
 		F4693D00297C6B5900974E0A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		F4693D01297C6B5900974E0A /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F4244FB4297F1CA700DA8630 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F4244FB7297F1CCF00DA8630 /* dataHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F45FCDB029782E4700EC7A17 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 		F45FCDBB29782E4700EC7A17 /* my2projectSnapKitChart */ = {
 			isa = PBXGroup;
 			children = (
+				F4244FB4297F1CA700DA8630 /* Helpers */,
 				F45FCDD429798D9200EC7A17 /* Models */,
 				F45FCDD029782EB000EC7A17 /* Application */,
 				F45FCDD129782F1100EC7A17 /* SupportingFiles */,
@@ -124,7 +135,7 @@
 		F45FCDD429798D9200EC7A17 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F45FCDD529798DB500EC7A17 /* RIPStatistics.swift */,
+				F4244FB9297F23D800DA8630 /* StaticInformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,7 +264,8 @@
 			files = (
 				F4693D02297C6B5900974E0A /* CustomTableViewCell.swift in Sources */,
 				F45FCDD8297ACB7700EC7A17 /* chartViewController.swift in Sources */,
-				F45FCDD629798DB500EC7A17 /* RIPStatistics.swift in Sources */,
+				F4244FBA297F23D800DA8630 /* StaticInformation.swift in Sources */,
+				F4244FB8297F1CCF00DA8630 /* dataHelper.swift in Sources */,
 				F45FCDBD29782E4700EC7A17 /* AppDelegate.swift in Sources */,
 				F45FCDBF29782E4700EC7A17 /* SceneDelegate.swift in Sources */,
 				F45FCDD32978990700EC7A17 /* mainViewController.swift in Sources */,

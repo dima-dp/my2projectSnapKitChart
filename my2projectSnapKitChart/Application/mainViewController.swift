@@ -12,39 +12,78 @@ import Alamofire
 
 class mainViewController: UITableViewController {
     
-    var cellId = "Cell"
+    let activityIndicator = UIActivityIndicatorView()
     
-    var items = ["111", "222", "333", "444", "555"]
+    var cellId = "Cell"
+    var increase = [String: Int]()
+    var stats = [String: Int]()
+    
+    var termsUA = StaticInformation.shared.termsUA
+    var termsEN = StaticInformation.shared.termsEN
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
+        getStatsData()
         initialize()
+
     }
-    
-    
+
+// MARK: - Private functions
     
     private func initialize() {
         
         view.backgroundColor = .lightGray
+        
+        activityIndicator.color = .red
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().inset(70)
+        }
+    
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
 
-        let date = Date()
-        let format = DateFormatter()
-        format.dateFormat = "dd MM yyyy"
-        let today = format.string(from: date)
-        title = "втрати на \(today) склали:".uppercased()
-        
+        self.title = dataHelper.shared.tableViewTitle()
         tableView.setEditing(false, animated: true)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.layer.cornerRadius = 10
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.separatorColor = .white
         
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+    }
+    
+    private func getStatsData() {
+        
+        AF.request("https://russianwarship.rip/api/v1/statistics/latest").responseJSON {
+            (responseJSON) in
+            
+            self.activityIndicator.startAnimating()
+            switch responseJSON.result {
+            case .success(let value):
+                guard let jsonContainer = value as? [String: Any],
+                      let statsContainer = jsonContainer["data"] as? [String: Any],
+                      let stats = statsContainer["stats"] as? [String: Int],
+                      let increase = statsContainer["increase"] as? [String: Int]
+                else { return }
+                self.stats = stats
+                self.increase = increase
+              /*  print("----------------------")
+                print(self.stats)
+                print("----------------------")
+                print(self.increase) */
+            case .failure(let error):
+                print(error)
+            }
+            self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     
@@ -59,15 +98,25 @@ class mainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return termsUA.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomTableViewCell
-        
-        /*cell.textLabel?.text = items[indexPath.row]
-        cell.backgroundColor = .systemBrown */
+
+        let termEN = termsEN[indexPath.row]
+        cell.RIPName.text = termsUA[indexPath.row]
+        cell.imageName.image = UIImage(named: termEN)
+        cell.totalLosts.text = String(stats[termEN]?.description ?? "0")
+        if let increment = increase[termEN] {
+            if increment > 0 {
+                cell.changeLosts.text = "+" + String(increase[termEN]?.description ?? "0")
+            } else {
+                cell.changeLosts.text = String(increase[termEN]?.description ?? "0")
+            }
+        } else {
+            cell.changeLosts.text = "no data"
+        }
         return cell
-        
         
     }
     

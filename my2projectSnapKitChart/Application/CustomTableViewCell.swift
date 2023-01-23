@@ -14,10 +14,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var RIPName: UITextView!
     @IBOutlet weak var imageName: UIImageView!
     
-    
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         RIPName.layer.borderColor = CGColor(red: 50, green: 50, blue: 50, alpha: 1)
