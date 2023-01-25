@@ -12,11 +12,10 @@ import Alamofire
 
 class mainViewController: UITableViewController {
     
-    let activityIndicator = UIActivityIndicatorView()
-    
     var cellId = "Cell"
     var increase = [String: Int]()
     var stats = [String: Int]()
+
     
     var termsUA = StaticInformation.shared.termsUA
     var termsEN = StaticInformation.shared.termsEN
@@ -29,29 +28,44 @@ class mainViewController: UITableViewController {
         initialize()
 
     }
+    
+    
 
 // MARK: - Private functions
     
+    func configureRefreshControl () {
+       // Add the refresh control to your UIScrollView object.
+       tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:
+                                          #selector(handleRefreshControl),
+                                          for: .valueChanged)
+    }
+    
+    @objc func handleRefreshControl() {
+      getStatsData()
+       DispatchQueue.main.async {
+          self.tableView.refreshControl?.endRefreshing()
+       }
+    }
+    
     private func initialize() {
+
+        configureRefreshControl()
         
         view.backgroundColor = .lightGray
-        
-        activityIndicator.color = .red
-        activityIndicator.startAnimating()
-        view.addSubview(activityIndicator)
-        activityIndicator.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(70)
-        }
     
+        navigationController?.navigationBar.tintColor = .systemYellow
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
 
-        self.title = dataHelper.shared.tableViewTitle()
+        let today = dataHelper.shared.todayDate()
+        self.title = "втрати на \(today) склали:".uppercased()
+        
         tableView.setEditing(false, animated: true)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.layer.cornerRadius = 10
         tableView.isScrollEnabled = true
         tableView.separatorColor = .white
+        tableView.showsVerticalScrollIndicator = false
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -63,8 +77,7 @@ class mainViewController: UITableViewController {
         
         AF.request("https://russianwarship.rip/api/v1/statistics/latest").responseJSON {
             (responseJSON) in
-            
-            self.activityIndicator.startAnimating()
+
             switch responseJSON.result {
             case .success(let value):
                 guard let jsonContainer = value as? [String: Any],
@@ -74,15 +87,10 @@ class mainViewController: UITableViewController {
                 else { return }
                 self.stats = stats
                 self.increase = increase
-              /*  print("----------------------")
-                print(self.stats)
-                print("----------------------")
-                print(self.increase) */
             case .failure(let error):
                 print(error)
             }
             self.tableView.reloadData()
-            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -94,7 +102,7 @@ class mainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 55
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -116,12 +124,14 @@ class mainViewController: UITableViewController {
         } else {
             cell.changeLosts.text = "no data"
         }
+
         return cell
         
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = chartViewController()
+        vc.selectedTableRow = indexPath.row
         navigationController?.pushViewController(vc, animated: true)
     }
     

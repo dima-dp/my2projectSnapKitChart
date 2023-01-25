@@ -18,30 +18,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="544" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Ліквідовано особового складу Ліквідовано особового складу" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgK-95-qix">
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Ліквідовано особового складу Ліквідовано особового складу" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgK-95-qix">
                         <rect key="frame" x="70" y="0.0" width="424" height="50"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
-                        <color key="textColor" systemColor="labelColor"/>
-                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="HJp-q7-cg0">
-                        <rect key="frame" x="494" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="494" y="0.0" width="55" height="55"/>
                         <color key="tintColor" systemColor="linkColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="MgA-yb-ma0"/>
-                            <constraint firstAttribute="width" constant="50" id="fQ7-8T-HRC"/>
+                            <constraint firstAttribute="height" constant="55" id="MgA-yb-ma0"/>
+                            <constraint firstAttribute="width" constant="55" id="fQ7-8T-HRC"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5cz-tu-PZe">
                         <rect key="frame" x="5" y="0.0" width="65" height="45"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="120160" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjF-QN-g9X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="120160" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjF-QN-g9X">
                                 <rect key="frame" x="0.0" y="0.0" width="65" height="23.333333333333332"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="H7G-Hn-XVY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -54,16 +54,17 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                <color key="tintColor" systemColor="systemBlueColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="5cz-tu-PZe" secondAttribute="bottom" constant="5" id="5yB-sA-Krw"/>
-                    <constraint firstAttribute="trailing" secondItem="HJp-q7-cg0" secondAttribute="trailing" id="DJo-1I-ckA"/>
+                    <constraint firstAttribute="trailing" secondItem="HJp-q7-cg0" secondAttribute="trailing" constant="-5" id="DJo-1I-ckA"/>
                     <constraint firstAttribute="bottom" secondItem="qgK-95-qix" secondAttribute="bottom" id="HSM-7J-VP6"/>
                     <constraint firstItem="qgK-95-qix" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JTL-LC-7A6"/>
                     <constraint firstItem="5cz-tu-PZe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QMQ-nT-Esg"/>
                     <constraint firstItem="5cz-tu-PZe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Xas-n7-Bqh"/>
                     <constraint firstItem="qgK-95-qix" firstAttribute="leading" secondItem="5cz-tu-PZe" secondAttribute="trailing" id="bSq-lQ-xsK"/>
-                    <constraint firstAttribute="bottom" secondItem="HJp-q7-cg0" secondAttribute="bottom" id="bo5-bT-nxg"/>
+                    <constraint firstAttribute="bottom" secondItem="HJp-q7-cg0" secondAttribute="bottom" constant="-5" id="bo5-bT-nxg"/>
                     <constraint firstItem="qgK-95-qix" firstAttribute="leading" secondItem="5cz-tu-PZe" secondAttribute="trailing" id="lfe-2g-5ei"/>
                     <constraint firstAttribute="bottom" secondItem="qgK-95-qix" secondAttribute="bottom" id="o9V-Gt-w1n"/>
                     <constraint firstItem="HJp-q7-cg0" firstAttribute="leading" secondItem="qgK-95-qix" secondAttribute="trailing" id="rcA-EA-sG9"/>
@@ -82,14 +83,14 @@
     </objects>
     <resources>
         <image name="noImage" width="225" height="225"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
