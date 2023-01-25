@@ -16,15 +16,13 @@ class CustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        RIPName.layer.borderColor = CGColor(red: 50, green: 50, blue: 50, alpha: 1)
-        RIPName.layer.borderWidth = 0.35
-        // Initialization code
+        totalLosts.text = ""
+        changeLosts.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }
