@@ -6,6 +6,28 @@
 //
 
 import Foundation
+// MARK: - Statistics - FOR JSON DECODING
+struct Statistics: Codable {
+    let message: String?
+    let data: DataClass?
+}
+
+// MARK: - DataClass
+struct DataClass: Codable {
+    let records: [Record]?
+}
+
+// MARK: - Record
+struct Record: Codable {
+    let date: String?
+    let day: Int?
+    let resource: String?
+    let stats: [String: Int]?
+}
+
+
+
+
 
 struct StaticInformation {
     static let shared = StaticInformation()
@@ -40,5 +62,7 @@ struct StaticInformation {
                "atgm_srbm_systems",
                "cruise_missiles"
     ]
+    
+    
     
 }

@@ -29,7 +29,6 @@
                         <rect key="frame" x="494" y="0.0" width="55" height="55"/>
                         <color key="tintColor" systemColor="linkColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="55" id="MgA-yb-ma0"/>
                             <constraint firstAttribute="width" constant="55" id="fQ7-8T-HRC"/>
                         </constraints>
                     </imageView>
