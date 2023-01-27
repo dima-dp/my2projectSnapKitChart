@@ -7,42 +7,68 @@
 
 import UIKit
 import SnapKit
-import RealmSwift
 import Charts
 
 class chartViewController: UIViewController {
     
     var selectedTableRow = Int()
-    let segmentControl = UISegmentedControl(items: ["Рік", "Місяць", "Тиждень"])
+    var records = [Record]()
+    var values = [ChartDataEntry]()
+    let segmentControl = UISegmentedControl(items: ["Рік", "30 днів", "7 днів"])
     
     lazy var lineChartView: LineChartView = {
         let chartView = LineChartView()
         chartView.backgroundColor = .systemBlue
         chartView.rightAxis.enabled = false
         chartView.xAxis.labelPosition = .bottom
-        chartView.animate(yAxisDuration: 0.5)
+        chartView.xAxis.labelRotationAngle = -90
+        chartView.animate(xAxisDuration: 0.9)
         return chartView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
-        initialize()
-        
-        setData()
-        
-        print(StaticInformation.shared.termsUA[selectedTableRow])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        view.backgroundColor = .lightGray
+        
+        values = getStatsForOffsset(offset: 7,forKey: StaticInformation.shared.termsUA[selectedTableRow])
 
-// MARK: - Private functions
-    private func setData() {
-        let set1 = LineChartDataSet(entries: values, label: "MyLabel")
+        initialize()
+        
+        lineChartView.animate(xAxisDuration: 0.9)
+        setData(with: values)
+    }
+    
+    
+    // MARK: - Private functions
+    private func getStatsForOffsset(offset: Int, forKey: String) -> [ChartDataEntry] {
+        var values = [ChartDataEntry]()
+        var myRecords: [Int] = []
+        var datesSet: [String] = []
+        var i = 1.0
+        for index in (records.count - offset)..<records.count {
+            let stats = records[index].stats![StaticInformation.shared.termsEN[selectedTableRow]]
+            myRecords.append(stats!)
+            datesSet.append(records[index].date!.description)
+            values.append(ChartDataEntry(x: i, y: Double(stats!)))
+             i += 1
+        }
+        self.lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: datesSet)
+        return values
+    }
+    
+    private func setData(with values: [ChartDataEntry]) {
+        let set1LabelText = "Втрати по позиції \"" + StaticInformation.shared.termsUA[selectedTableRow] + "\""
+        let set1 = LineChartDataSet(entries: values, label: set1LabelText)
+
         set1.mode = .cubicBezier
         set1.drawCirclesEnabled = false
         set1.lineWidth = 3
-        set1.setColor(.white)
-        set1.fill = Fill(color: .white)
+        set1.setColor(.systemYellow)
+        set1.fill = Fill(color: .systemYellow)
         set1.fillAlpha = 0.8
         set1.drawFilledEnabled = true
         set1.drawHorizontalHighlightIndicatorEnabled = false
@@ -53,18 +79,8 @@ class chartViewController: UIViewController {
         lineChartView.data = data
     }
     
-    let values: [ChartDataEntry] = [
-        ChartDataEntry(x: 0.0, y: 0.0),
-        ChartDataEntry(x: 1.0, y: 5.0),
-        ChartDataEntry(x: 2.0, y: 3.0),
-        ChartDataEntry(x: 3.0, y: 1.0),
-        ChartDataEntry(x: 4.0, y: 5.0),
-        ChartDataEntry(x: 5.0, y: 10.0),
-        ChartDataEntry(x: 6.0, y: 12.0)
-    ]
-    
     private func initialize() {
-        title = "Графік за минулий тиждень".uppercased()
+        title = "Графік за минулі 7 днів".uppercased()
         
         segmentControl.selectedSegmentIndex = 2
         segmentControl.backgroundColor = .systemYellow
@@ -82,26 +98,33 @@ class chartViewController: UIViewController {
         
         lineChartView.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(16)
-            $0.top.equalToSuperview().inset(70)
+            $0.top.equalToSuperview().inset(100)
             $0.bottom.equalTo(segmentControl).inset(50 + 20)
         }
     }
     
     @objc func segmentControlChanged(_ sender: UISegmentedControl!) {
-        
-        lineChartView.chartAnimator.animate(yAxisDuration: 0.5, easing: nil)
-        setData()
-        print(sender.selectedSegmentIndex)
+      
         switch sender.selectedSegmentIndex {
         case 0:
-            title = "Графік за минулий рік".uppercased()
+            title = "Графік за минулий рік".uppercased()   //Має приходити з бєкенду
+            values = []
+            for index in 1...12 {
+                values.append(ChartDataEntry(x: Double(index), y: Double.random(in: 1000...10000)))
+            }
+  
         case 1:
-            title = "Графік за минулий місяць".uppercased()
+            title = "Графік за минулі 30 днів".uppercased()
+            values = getStatsForOffsset(offset: 30,forKey: StaticInformation.shared.termsUA[selectedTableRow])
         case 2:
-            title = "Графік за минулий тиждень".uppercased()
+            title = "Графік за минулі 7 днів".uppercased()
+            values = getStatsForOffsset(offset: 7,forKey: StaticInformation.shared.termsUA[selectedTableRow])
         default:
-            title = "Графік за минулий  період".uppercased()
+            title = "Графік за минулий період".uppercased()
+            values = []
         }
+        lineChartView.animate(xAxisDuration: 0.9)
+        setData(with: values)
     }
-
+    
 }

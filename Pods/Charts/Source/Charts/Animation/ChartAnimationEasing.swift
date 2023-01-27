@@ -107,7 +107,7 @@ internal func easingFunctionFromOption(_ easing: ChartEasingOption) -> ChartEasi
     case .easeInBack:
         return EasingFunctions.EaseInBack
     case .easeOutBack:
-        return EasingFunctions.EaseOutBack
+        return EasingFunctions.EaseInBack
     case .easeInOutBack:
         return EasingFunctions.EaseInOutBack
     case .easeInBounce:
@@ -337,13 +337,12 @@ internal struct EasingFunctions
         return Double( position * position * ((s + 1.0) * position - s) )
     }
     
-   internal static let EaseOutBack = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
-     /*   let s: TimeInterval = 1.70158
+   /* internal static let EaseOutBack = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
+        let s: TimeInterval = 1.70158
         var position: TimeInterval = elapsed / duration
         position -= 1.0
-        return Double( position * position * ((s + 1.0) * position + s) + 1.0 )*/
-       return 0.0
-    }
+        return Double( position * position * ((s + 1.0) * position + s) + 1.0 )
+    } */
     
     internal static let EaseInOutBack = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
         var s: TimeInterval = 1.70158

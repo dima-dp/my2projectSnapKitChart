@@ -6,10 +6,7 @@ target 'my2projectSnapKitChart' do
   use_frameworks!
 
   # Pods for my2projectSnapKitChart
-pod 'RealmSwift'
 pod 'SnapKit'
 pod 'Charts'
-pod 'ChartsRealm'
-
 
 end
