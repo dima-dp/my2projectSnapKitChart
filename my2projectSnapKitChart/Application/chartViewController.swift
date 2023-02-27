@@ -34,6 +34,7 @@ class chartViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         
+        // when view loads it shows data for last 7 days by default
         values = getStatsForOffsset(offset: 7,forKey: StaticInformation.shared.termsUA[selectedTableRow])
 
         initialize()
@@ -80,7 +81,7 @@ class chartViewController: UIViewController {
     }
     
     private func initialize() {
-        title = "Графік за минулі 7 днів".uppercased()
+        title = "Графік за минулі 7 днів".uppercased()  // is showing by default
         
         segmentControl.selectedSegmentIndex = 2
         segmentControl.backgroundColor = .systemYellow
@@ -107,9 +108,9 @@ class chartViewController: UIViewController {
       
         switch sender.selectedSegmentIndex {
         case 0:
-            title = "Графік за минулий рік".uppercased()   //Має приходити з бєкенду
+            title = "Графік за минулий рік".uppercased()   //RAndom generated because it must come form backend but I don't have one
             values = []
-            for index in 1...12 {
+            for index in 1...12 {   // 12 months
                 values.append(ChartDataEntry(x: Double(index), y: Double.random(in: 1000...10000)))
             }
   

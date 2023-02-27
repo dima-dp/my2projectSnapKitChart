@@ -12,12 +12,12 @@ import Alamofire
 class mainViewController: UITableViewController {
 
     var cellId = "Cell"
-    var increase = [String: Int]()
-    var stats = [String: Int]()
+    var increase = [String: Int]()   // array for records about 24-hour increase
+    var stats = [String: Int]()      // array for all time stats
     let vc = chartViewController()
     
-    var termsUA = StaticInformation.shared.termsUA
-    var termsEN = StaticInformation.shared.termsEN
+    var termsUA = StaticInformation.shared.termsUA    // Position name in Ukrainian language
+    var termsEN = StaticInformation.shared.termsEN    // Position name in English language
     
     override func viewDidLoad() {
         
@@ -30,14 +30,14 @@ class mainViewController: UITableViewController {
     
     // MARK: - Private functions
     
-    func configureRefreshControl () {
+    func configureRefreshControl () {                  // 1. uses when user drag down screen (refreshing)
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action:
                                             #selector(handleRefreshControl),
                                             for: .valueChanged)
     }
     
-    @objc func handleRefreshControl() {
+    @objc func handleRefreshControl() {                // 2. uses when user drag down screen (refreshing)
         getStatsData()
         DispatchQueue.main.async {
             self.tableView.refreshControl?.endRefreshing()
@@ -70,7 +70,7 @@ class mainViewController: UITableViewController {
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
     }
     
-    //MARK: - Alamofire
+    //MARK: - working with Alamofire
     private func getStatsData() {
         
         AF.request("https://russianwarship.rip/api/v1/statistics/latest").responseJSON {
@@ -78,6 +78,7 @@ class mainViewController: UITableViewController {
             
             switch responseJSON.result {
             case .success(let value):
+                // working with arrays just to try it
                 guard let jsonContainer = value as? [String: Any],
                       let statsContainer = jsonContainer["data"] as? [String: Any],
                       let stats = statsContainer["stats"] as? [String: Int],
@@ -92,8 +93,8 @@ class mainViewController: UITableViewController {
         }
     }
     
-    //MARK: - URLSession
-    private func getDataForChartBackground() {
+    //MARK: - working with URLSession
+    private func getDataForChartBackground() {   ///loading data for last month (40 days because there are days without data)
         
         let dateWarBegin = "24 02 2022"
 
@@ -105,7 +106,6 @@ class mainViewController: UITableViewController {
         let offset = dateDiff - 40
         let limit = 40
         let urlString = "https://russianwarship.rip/api/v1/statistics?offset=\(offset)&limit=\(limit)"
-        //print(urlString)
  
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -114,14 +114,11 @@ class mainViewController: UITableViewController {
                 return
             }
             guard let data = data else { return }
-            
-            //let jsonString = String(data: data, encoding: .utf8)
+
             let statisticInformaion =  try? JSONDecoder().decode(Statistics.self, from: data)
               
             self.vc.records = statisticInformaion?.data?.records ?? []
-            
-            //треба розпарсити ДЖСОН та записати його в Реалм. Аналіз чи там вже є такі дані?
-          //  print(jsonString ?? "")
+
         }.resume()
         
     }
@@ -147,7 +144,8 @@ class mainViewController: UITableViewController {
         cell.RIPName.text = termsUA[indexPath.row]
         cell.imageName.image = UIImage(named: termEN)
         cell.totalLosts.text = String(stats[termEN]?.description ?? "0")
-        if let increment = increase[termEN] {
+    
+        if let increment = increase[termEN] { // checking if there is need for "+" before data
             if increment > 0 {
                 cell.changeLosts.text = "+" + String(increase[termEN]?.description ?? "0")
             } else {

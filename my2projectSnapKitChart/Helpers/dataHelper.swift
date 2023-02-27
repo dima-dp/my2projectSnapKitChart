@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Returns today date
 struct dataHelper {
     static let shared = dataHelper()
    
